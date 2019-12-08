@@ -15,8 +15,9 @@
             <apex:pageBlockTable value="{!result}" var="appointment">
                 <apex:column headervalue="Start Time: " value="{!appointment.Start_Time__c}"/>
                 <apex:column headervalue="Status: " value="{!appointment.Status__c}"/>
-                <apex:column headervalue="Doctor name: " value="{!appointment.Doctor__r.name}"/>
+                <apex:column headervalue="Doctor name: " value="{!appointment.Doctor__r.first_name__c} {!appointment.Doctor__r.last_name__c}"/>
                 <apex:column headervalue="Description: " value="{!appointment.Description__c}"/>
+                <apex:column headervalue="Location: " value="{!appointment.location__r.office_location__r.full_address__c}"/>
             </apex:pageBlockTable>
         </apex:pageBlockSection> 
         </apex:pageBlock>

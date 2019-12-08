@@ -20,7 +20,7 @@
                 
            </apex:pageBlockSection>
             <apex:pageBlockTable value="{!doctorList}" var="doc">
-                <apex:column headervalue="Name" value="{!doc.name}"/>
+                <apex:column headervalue="Name" value="{!doc.first_name__c} {!doc.last_name__c}"/>
                 <apex:column headerValue="Sex" value="{!doc.Sex__c}"/>
                 <apex:column headerValue="Specialty" value="{!doc.Specialty__c}"/>
                 <apex:column headerValue="Languages" value="{!doc.Languages_Spoken__c}"/>

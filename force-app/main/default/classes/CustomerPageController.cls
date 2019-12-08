@@ -77,7 +77,7 @@ public without sharing class CustomerPageController {
         doctorAppointmentPicker.clear();
         for(Doctor__c doc : doctorList)
         {
-            List<Residence__c> residenceList=[Select office_location__c FROM Residence__C Where Doctor__r.id = :doc.id];
+            List<Residence__c> residenceList=[Select office_location__r.id, office_location__r.Full_Address__c FROM Residence__C Where Doctor__r.id = :doc.id];
             for(Residence__c residence:residenceList)
                 doctorAppointmentPicker.add(new SelectOption(doc.Id+' '+residence.office_location__r.id, doc.first_name__c + ' '+doc.last_name__c+' '+residence.office_location__r.Full_Address__c));
         }       
